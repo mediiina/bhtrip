@@ -1,38 +1,27 @@
-import { Container } from 'react-bootstrap';
-import './App.css';
-import Signup from "./components/Signup";
-import { AuthProvider } from './contexts/AuthContext';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Dashboard from './components/Dashboard';
-import Login from './components/Login'
-import ForgotPassword from "./components/ForgotPassword"
-import UpdateProfile from "./components/UpdateProfile"
-import ProtectedRoute from "./components/ProtectedRoute"
+import React from 'react';
+import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from "./pages/Home"
+import Authentication from "./pages/Authentication"
+import Error from "./pages/Error"
+import Dashboard from "./pages/Dashboard"
+import PrivateRoutesLayout from './layouts/PrivateRoutesLayout';
+
 
 function App() {
   return (
-    
-      <Container 
-         className="d-flex align-items-center justify-content-center"
-         style={{minHeight:"100vh"}}
-      >
-         <div className="w-100" style={{maxWidth:' 400px '}} >
-           <Router>
-             <AuthProvider>
-              <Routes>
-                <Route path='/' element={ProtectedRoute}>
-                  <Route path='/' element={<Dashboard/>}/>
-                  <Route path='/update-profile' element={<UpdateProfile/>}/> 
-                </Route>
-                <Route path="/signup" element={<Signup/>} />
-                <Route path="/login" element={<Login/>} />
-                <Route path="/forgot-password" element={<ForgotPassword/>} />
-              </Routes>
-             </AuthProvider>
-           </Router>
-         </div>
-      </Container>
-)
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/authentication" element={<Authentication />} />
+      <Route path="*" element={<Error />} />
+
+      {/*private pages*/}
+      <Route element={<PrivateRoutesLayout/>}>
+        <Route path="/dashboard" element={<Dashboard/>} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;

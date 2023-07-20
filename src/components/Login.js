@@ -1,59 +1,56 @@
-import React, {useRef, useState}from 'react'
-import {Form, Button, Card, Alert} from 'react-bootstrap'
-import {useAuth} from '../contexts/AuthContext'
-import {Link, useNavigate} from 'react-router-dom'
+import { useState } from "react";
+import userLogin from "../auth/userLogin";
+import { useNavigate, useLocation } from "react-router-dom";
 
-export default function Login(){
 
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const { login } = useAuth()
-    const [error, setError] = useState('')
-    const [loading, setLoading] = useState(false)
-    const navigate = useNavigate()
 
-    async function handleSubmit(e) {
-        e.preventDefault()
+const Login = (props) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState(null);
 
-        try {
-            setError('')
-            setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
-            navigate.push("/")
-        } catch {
-            setError('Failed to sign in')
-        }
-        setLoading(false)
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    const from = location.state?.from?.pathname || "/dashboard";
+    const { error, login }= userLogin();
+
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      await login(email,password);
+      if (!error) {
+         navigate(from, {replace: true});
+         setEmail("");
+         setPassword("");
+         return;
+      } else {
+         setErrorMessage(error)
+
+      }
     }
-
     return (
-     <>
-        <Card>
-            <Card.Body>
-                <h2 className="text-center mb-4">Log In</h2>
-                
-                {error && <Alert variant="danger">{error}</Alert>}
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group id="email">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" ref={emailRef} required/>
-                    </Form.Group>
-                    <Form.Group id="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" ref={passwordRef} required/>
-                    </Form.Group>
-                    
-                    <Button disabled = {loading} className="w-100" type="submit">
-                        Log In
-                    </Button>
-                </Form>
-            </Card.Body>
-        </Card>
-        <div className="w-100 text-center mt-2">
-            Need an account? <Link to="/signup">Sign Up</Link>
-        </div>
-
-     </>
-    )
+        <>
+           <h2>Login to your account</h2>
+           <form onSubmit={handleLogin}>
+              <input 
+                 type="email" 
+                 placeholder="email" 
+                 value={email}
+                 onChange={(e) => setEmail(e.target.value)}/>
+              <input 
+                 type="password" 
+                 placeholder="password"
+                 value={password}
+                 onChange={(e) => setPassword(e.target.value)} 
+             />
+              {error && <p>{errorMessage}</p>}
+              <button type="submit"> Login </button>
+           </form>
+           <p>Have no an account?</p>
+           <button onClick={props.toggleForm}>Sign Up</button>  
+        </>
+    );
+        
 }
+
+export default Login;
