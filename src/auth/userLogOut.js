@@ -1,6 +1,6 @@
 import { auth } from '../firebase';
 
-let error = null;
+let error = null; 
 
 const logOut = async () => {
     error = null;

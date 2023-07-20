@@ -23,6 +23,6 @@ const login = async (email, password) => {
 
     const userLogin = () => {
         return {error, login};
-    };
+    }; 
 
     export default userLogin;

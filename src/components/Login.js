@@ -50,7 +50,7 @@ const Login = (props) => {
            <button onClick={props.toggleForm}>Sign Up</button>  
         </>
     );
-        
+      
 }
 
 export default Login;

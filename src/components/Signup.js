@@ -4,7 +4,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 
 
-
 const SignUp = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

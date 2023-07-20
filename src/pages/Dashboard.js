@@ -21,6 +21,6 @@ const Dashboard = () => {
       <button onClick={handleLogOut}>Log Out</button>
     </div>
   )
-}
+} 
 
 export default Dashboard

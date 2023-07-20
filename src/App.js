@@ -8,7 +8,7 @@ import Error from "./pages/Error"
 import Dashboard from "./pages/Dashboard"
 import PrivateRoutesLayout from './layouts/PrivateRoutesLayout';
 
-
+ 
 function App() {
   return (
     <Routes>

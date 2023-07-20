@@ -8,7 +8,7 @@ const Authentication = () => {
 
   const handleToggle = () => {
     setToggle(!toggle);
-  };
+  }; 
   return (
   <div> 
     {toggle ? (

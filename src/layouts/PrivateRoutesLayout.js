@@ -8,7 +8,7 @@ const PrivateRoutesLayout = () => {
   return auth.currentUser ? (<Outlet/>) : (
     <Navigate to="/authentication" state={{from: location}}
     replace/>
-  )
+  ) 
 };
 
 export default PrivateRoutesLayout

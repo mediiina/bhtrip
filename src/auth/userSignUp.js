@@ -23,6 +23,6 @@ const signUp = async (email, password) => {
 
 const userSignUp = ()=> {
     return {error, signUp};
-};
+};   
 
 export default userSignUp;
