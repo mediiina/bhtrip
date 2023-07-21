@@ -1,6 +1,7 @@
 import { useState } from "react";
 import userLogin from "../auth/userLogin";
 import { useNavigate, useLocation } from "react-router-dom";
+import "./authentication.css"
 
 
 
@@ -29,26 +30,26 @@ const Login = (props) => {
       }
     }
     return (
-        <>
-           <h2>Login to your account</h2>
-           <form onSubmit={handleLogin}>
-              <input 
+        <div className="login">
+           <h2 className="loginTitle">Login to your account</h2>
+           <form className= "loginForm" onSubmit={handleLogin}>
+              <input className="loginInput"
                  type="email" 
                  placeholder="email" 
                  value={email}
                  onChange={(e) => setEmail(e.target.value)}/>
-              <input 
+              <input className="loginInput"
                  type="password" 
                  placeholder="password"
                  value={password}
                  onChange={(e) => setPassword(e.target.value)} 
              />
               {error && <p>{errorMessage}</p>}
-              <button type="submit"> Login </button>
+              <button className="loginButton"  type="submit"> Login </button>
            </form>
-           <p>Have no an account?</p>
-           <button onClick={props.toggleForm}>Sign Up</button>  
-        </>
+           <p className="loginText">Have no an account?</p>
+           <button className="loginButton"  onClick={props.toggleForm}>Sign Up</button>  
+        </div>
     );
       
 }

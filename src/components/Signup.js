@@ -1,7 +1,7 @@
 import { useState } from "react";
 import userSignUp from "../auth/userSignUp";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import "./authentication.css"
 
 
 const SignUp = (props) => {
@@ -32,26 +32,26 @@ const SignUp = (props) => {
       }
     }
     return (
-        <>
-           <h2>Create your account</h2>
-           <form onSubmit={handleSignOut}>
-              <input 
+        <div className="signUp">
+           <h2 className="signUpTitle">Create your account</h2>
+           <form className= "signUpForm"  onSubmit={handleSignOut}>
+              <input className="signUpInput"
                  type="email" 
                  placeholder="email"
                  value={email}
                  onChange={(e) => setEmail(e.target.value)} 
                   />
-              <input 
+              <input className="signUpInput"
                  type="password" 
                  placeholder="password"
                  value={password}
                  onChange={(e) => setPassword(e.target.value)} />
               {error && <p>{errorMessage}</p>}
-              <button type="submit"> Sign Up </button>
+              <button className="signUpButton" type="submit"> Sign Up </button>
            </form>
-           <p>Have an account?</p>
-           <button onClick={props.toggleForm}>Login</button> 
-        </>
+           <p className="signUpText" >Have an account?</p>
+           <button className="signUpButton" onClick={props.toggleForm}>Login</button> 
+        </div>
     );
         
     

@@ -1,0 +1,107 @@
+.login{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://img.freepik.com/free-photo/planning-traveling-trip-notes-wanderkust_53876-127488.jpg?w=996&t=st=1689892770~exp=1689893370~hmac=efffc3cc5c6bc56e1335def08804a90ae3027b590dc4c439487bb6f17e58951e");
+    background-size: cover;
+    background-position: center;
+}
+
+.loginTitle{
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: initial;
+}
+
+.loginForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm > label{
+    margin: 10px 0;
+
+}
+
+.loginText {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.loginInput{
+    padding: 10px;
+    border-color: white;
+    border: none;
+
+}
+
+.loginButton{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: lightcoral;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.loginButton:disabled{
+    cursor:not-allowed;
+    background-color: coral;
+}
+
+.signUp{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://c.wallhere.com/photos/79/2f/vintage_pens_writing_paper-623762.jpg!d");
+    background-size: cover;
+}
+
+.signUpTitle{
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: initial;
+}
+
+.signUpForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signUpForm > label{
+    margin: 10px 0;
+
+}
+
+.signUpText {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.signUpInput{
+    padding: 10px;
+    border-color: white;
+    border: none;
+
+}
+
+.signUpButton{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: teal;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
