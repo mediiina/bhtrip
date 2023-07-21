@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 .nav{
   background-color: black;
   color: white;
@@ -10,7 +11,7 @@
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
-}
+} 
 
 .nav ul {
   padding: 0;
@@ -31,7 +32,7 @@
 
 .nav li:active {
   background-color: #555 ;
-}
+} 
 
 
 
