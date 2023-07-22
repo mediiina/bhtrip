@@ -9,12 +9,15 @@ import Dashboard from "./pages/Dashboard"
 import PrivateRoutesLayout from './layouts/PrivateRoutesLayout';
 import PlacesToGo from "./pages/PlacesToGo"
 import PlanYourTrip from "./pages/PlanYourTrip"
+import Footer from './pages/Footer';
+import Navbar from './Navbar';
 
 
  
 function App() {
   return (
-    
+    <div className='App'>
+      <Navbar/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/authentication" element={<Authentication />} />
@@ -27,6 +30,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>} />
       </Route>
     </Routes>
+    <Footer></Footer>
+    </div>
   ) 
 }
 

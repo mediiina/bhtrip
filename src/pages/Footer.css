@@ -1,0 +1,21 @@
+.footer {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+@media screen and (max-width: 850px){
+    .footer{
+        padding: 4rem 2rem;
+    }
+}
+
