@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "../components/Login";
 import SignUp from '../components/Signup';
-//import Navbar from '../Navbar';
-import Footer from './Footer';
 
 const Authentication = () => {
   const [toggle, setToggle] = useState(true);

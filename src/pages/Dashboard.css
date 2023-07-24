@@ -1,0 +1,48 @@
+
+.text-center {
+    color: black;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.post-form input:focus {
+    border-color: rgb(213, 213, 205) !important;
+}
+
+.description-box {
+    border-radius: 0!important;
+    height: 150px;
+    resize: none;
+    padding-top: 20px !important;
+    letter-spacing: 1px!important;
+}
+
+.btn-add{
+    background: #000000 !important;
+    border-radius: 5px!important;
+    color: #fff!important;
+    padding: 10px 50px !important;
+}
+
+.react-tag-input {
+    height: 45px !important;
+}
+
+.react-tag-input:focus {
+    border-color: rgb(112, 112, 101) !important;
+}
+
+.catg-dropdown {
+    width: 100%;
+    border-radius: 4px;
+    height: 45px;
+    color: black;
+}
+
+.trending{
+    float: left;
+    color: rgb(134, 134, 160);
+    font-size: 18px;
+    margin: auto;
+}
