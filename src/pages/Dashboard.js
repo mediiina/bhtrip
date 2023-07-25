@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import "./Dashboard.css"
 import ReactTagInput from '@pathofdev/react-tag-input';
 import "@pathofdev/react-tag-input/build/index.css";
-import { storage } from '../firebase';
+import { db, storage } from '../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { addDoc, collection } from "firebase/firestore";
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -45,6 +47,7 @@ const Dashboard = () => {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(null);
 
+
   const{title, tags, category, trending, description} = form;
 
   useEffect(() => {
@@ -79,10 +82,30 @@ const Dashboard = () => {
   file && uploadFile();
 }, [file]);
   
-  const handleChange = (e) => {}
-  const handleTags = () => {};
-  const handleTrending = () => {}
-  const onCategoryChange = (e) => {}
+  const handleChange = (e) => {
+    setForm({...form, [e.target.name]: e.target.value})
+  }
+  const handleTags = (tags) => {
+    setForm({...form, tags});
+  };
+  const handleTrending = (e) => {
+    setForm({ ...form, trending: e.target.value});
+  }
+  const onCategoryChange = (e) => {
+    setForm({ ...form, category: e.target.value});
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (category && tags && title && file && description && trending) {
+      try{
+        await addDoc(collection(db, "attractions"), form );
+        console.log("Document successfully added to 'attractions' collection.");
+      } catch (error) {
+        console.error("Error adding document to 'attractions' collection:", error);
+      }
+    }
+    navigate("/");
+  }
 
   return (
     
@@ -97,7 +120,7 @@ const Dashboard = () => {
           </div>
           <div className="row h-100 justify-content-center align-items-center">
             <div className="col-10 col-md-8 col-lg-6">
-              <form className="row post-form">
+              <form className="row post-form" onSubmit={handleSubmit}>
                 <div className="col-12 py-3">
                   <input
                     type="text"
@@ -166,7 +189,10 @@ const Dashboard = () => {
                  />
                 </div>
                 <div className="col-12 py-3 text-center">
-                  <button className="btn btn-add" type="submit">
+                  <button 
+                    className="btn btn-add" 
+                    type="submit"
+                    disabled={progress !== null && progress < 100}>
                     Submit
                   </button>
                 </div>
