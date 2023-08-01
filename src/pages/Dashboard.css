@@ -133,3 +133,52 @@
 	margin-top: 10px;
 	font-size: 14px;
 }
+
+.post-title-box {
+    width: 20%;
+	z-index: 555;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+    .single & {
+		position: relative;
+		height: 500px;
+		width: 100%;
+	}
+
+    .overlay {
+        position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background: rgba(0,0,0,.4);
+    }
+
+    .post-title {
+        z-index: 12;
+		position: absolute;
+		bottom: 10px;
+		padding: 30px;
+
+        .single & {
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+            color: rgb(154, 151, 151);
+            font-family:'Lora', serif;
+            text-shadow: 1px 3px rgb(255, 255, 255);
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);  
+		}
+
+    }
+    
+}
+
+.post-single-content {
+    z-index: 999;
+	background: rgb(255, 255, 255);
+    text-align: justify;
+}

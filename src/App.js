@@ -8,6 +8,7 @@ import Error from "./pages/Error"
 import Dashboard from "./pages/Dashboard"
 import PrivateRoutesLayout from './layouts/PrivateRoutesLayout';
 import PlacesToGo from "./pages/PlacesToGo"
+import Detail from "./pages/Detail"
 import PlanYourTrip from "./pages/PlanYourTrip"
 import Footer from './pages/Footer';
 import Navbar from './Navbar';
@@ -23,6 +24,7 @@ function App() {
       <Route path="/authentication" element={<Authentication />} />
       <Route path="*" element={<Error />} />
       <Route path="/places-to-go" element={<PlacesToGo/>} />
+      <Route path="/detail/:id" element={<Detail/>} />
       <Route path="/plan-your-trip" element={<PlanYourTrip/>} />
 
       {/*private pages*/}

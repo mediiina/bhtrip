@@ -1,6 +1,6 @@
 import React from 'react'
 import FontAwesome from "react-fontawesome";
-//import {Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 import { excerpt } from "../utility";
 
 
@@ -24,10 +24,13 @@ const PostSection = ({attractions}) => {
                             {item.category}</h6>
                         <span className="title py-2">{item.title}</span>
                     </div>
-                    <div className="short-description">
+                    <div className="short-description text-start">
                         {excerpt(item.description, 120)}
                     </div>
-                    <button className="btn btn-read">Read More</button>
+                    <Link to={`/detail/${item.id}`}>
+                      <button className="btn btn-read">Read More</button>
+                    </Link>
+
                     <div style={{float: "right"}}>
                         <FontAwesome
                         name="trash"
