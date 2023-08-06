@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './Header'
-import Destination from './Destination'
-import Trip from './Trip'
+import Header from '../components/Header'
+import Destination from '../components/Destination'
+import Trip from '../components/Trip'
 
 
 const Home = () => {
