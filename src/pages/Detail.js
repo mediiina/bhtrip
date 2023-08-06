@@ -3,15 +3,18 @@ import {useParams} from "react-router-dom"
 import {db} from '../firebase'
 import { doc, getDoc } from 'firebase/firestore'
 
+
 const Detail = ({setActive}) => {
     const {id} = useParams();
     const [post, setPost] = useState(null);
+
 
     useEffect(() => {
         id && getPostDetail();
     }, [id])
 
     const getPostDetail = async () => {
+
         const docRef = doc(db, "attractions", id);
         const postDetail = await getDoc(docRef);
         setPost(postDetail.data());
@@ -30,10 +33,6 @@ const Detail = ({setActive}) => {
             <div className="row mx-0">
                 <div className="col-md-8">
                     <p className="text-start">{post?.description}</p>
-                </div>
-                <div className="col-md-3">
-                    <h2>Tags</h2>
-                    <h2>Most Popular</h2>
                 </div>
             </div>
         </div>

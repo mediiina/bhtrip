@@ -25,7 +25,6 @@ const Dashboard = () => {
 
   const initialState = {
     title: "",
-    tags:[],
     trending:"no",
     category:"",
     description:"",
@@ -40,7 +39,8 @@ const Dashboard = () => {
     "Waterfall",
     "Bridge",
     "Mountain",
-    "Ethno Village"
+    "Ethno Village",
+    "National Park"
   ];
 
   const [form, setForm] = useState(initialState);
@@ -48,7 +48,7 @@ const Dashboard = () => {
   const [progress, setProgress] = useState(null);
 
 
-  const{title, tags, category, trending, description} = form;
+  const{title, category, trending, description} = form;
 
   useEffect(() => {
     const uploadFile =() => {
@@ -85,9 +85,7 @@ const Dashboard = () => {
   const handleChange = (e) => {
     setForm({...form, [e.target.name]: e.target.value})
   }
-  const handleTags = (tags) => {
-    setForm({...form, tags});
-  };
+ 
   const handleTrending = (e) => {
     setForm({ ...form, trending: e.target.value});
   }
@@ -96,7 +94,7 @@ const Dashboard = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (category && tags && title && file && description && trending) {
+    if (category && title && file && description && trending) {
       try{
         await addDoc(collection(db, "attractions"), form );
         console.log("Document successfully added to 'attractions' collection.");
@@ -131,13 +129,7 @@ const Dashboard = () => {
                     onChange={handleChange} 
                   />
                 </div>
-                <div className="col-12 py-3">
-                  <ReactTagInput 
-                     tags={tags} 
-                     placeholder="Tags" 
-                     onChange={handleTags} 
-                  />
-                </div>
+                
                 <div className="col-12 py-3">
                   <p className="trending">Is it trending ?</p>
                   <div className="form-check-inline mx-2">
@@ -155,9 +147,9 @@ const Dashboard = () => {
                     <input
                       type="radio"
                       className="form-check-input"
-                      value="yes"
+                      value="no"
                       name="radioOption"
-                      checked={trending === "yes"}
+                      checked={trending === "no"}
                       onChange={handleTrending} 
                     />
                     <label htmlFor="radioOption" className="form-check-label">

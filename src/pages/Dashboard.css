@@ -1,6 +1,8 @@
 
+
+
 .text-center {
-    color: black;
+    color: rgb(5, 5, 5);
     font-family: 'Lora', serif;
     font-weight: bold;
     font-size: 50px;
@@ -47,15 +49,16 @@
     margin: auto;
 }
 
+/*Post Section */
+
 .post-heading {
-	font-size: 24px;
-	color: #222;
+	font-size: 25px;
+	color: #0a0a0a;
     border-bottom: 1px solid #777;
 }
 
 .posts-img {
-    height: 200px;
-	border-radius:5px;
+    border-radius:5px;
 	overflow: hidden;
 	position: relative;
 	top: 0;
@@ -73,6 +76,7 @@
 	box-shadow:0, 2px, 3px, 1px, rgba(0,0,0,0.3);
 }
 
+
 .title {
     font-size: 17px;
 	color: #222!important;
@@ -86,7 +90,7 @@
 .category {
     display: inline-block;
     position: relative;
-    background-color: #4287f5;
+    background-color: #02183b;
     padding: 4px 8px;
     color: #fff;
     text-decoration: none;
@@ -95,14 +99,6 @@
     line-height: 16px;
     font-weight: 700;
     border-radius: 4px;
-}
-
-.fa-trash {
-	color: #c43421 !important;
-}
-
-.fa-edit {
-	color: lightsalmon !important;
 }
 
 .meta-info {
@@ -132,6 +128,7 @@
 	float: left;
 	margin-top: 10px;
 	font-size: 14px;
+    cursor: pointer;
 }
 
 .post-title-box {
@@ -182,3 +179,176 @@
 	background: rgb(255, 255, 255);
     text-align: justify;
 }
+
+
+.spinner{
+    width: 3rem;
+    height: 3rem;
+}
+
+/*Trendings*/
+
+.trending-img-position {
+	position: relative;
+	overflow: hidden;
+	z-index: 5;
+	cursor: pointer;
+}
+
+.trending-img-size {
+	height: 326px;
+	overflow: hidden;
+}
+.trending-img-size > img {
+	height: 340px;
+	min-width: 100%;
+}
+
+.trending-img-relative {
+	position: relative;
+}
+
+.trending-img-absolute {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: 0;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.83) 100%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.83) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.83) 100%);
+	z-index: 7;
+}
+
+.trending-img-absolute-1 {
+	position: absolute;
+	width: 100%;
+	z-index: 9;
+	padding: 10px;
+	bottom: 0;
+}
+
+.trending-meta-info {
+	color: rgba(255,255,255,0.7);
+	font-size: 13px;
+}
+
+.trending-img-position:hover {
+	-webkit-animation: swing1 1s ease;
+	animation: swing1 1s ease;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+}
+ @-webkit-keyframes swing1 {
+ 15% {
+ -webkit-transform: translateX(5px);
+ transform: translateX(5px);
+}
+ 30% {
+ -webkit-transform: translateX(-5px);
+ transform: translateX(-5px);
+}
+ 50% {
+ -webkit-transform: translateX(3px);
+ transform: translateX(3px);
+}
+ 65% {
+ -webkit-transform: translateX(-3px);
+ transform: translateX(-3px);
+}
+ 80% {
+ -webkit-transform: translateX(2px);
+ transform: translateX(2px);
+}
+ 100% {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+}
+@keyframes swing1 {
+ 15% {
+ -webkit-transform: translateX(5px);
+ transform: translateX(5px);
+}
+ 30% {
+ -webkit-transform: translateX(-5px);
+ transform: translateX(-5px);
+}
+ 50% {
+ -webkit-transform: translateX(3px);
+ transform: translateX(3px);
+}
+ 65% {
+ -webkit-transform: translateX(-3px);
+ transform: translateX(-3px);
+}
+ 80% {
+ -webkit-transform: translateX(2px);
+ transform: translateX(2px);
+}
+ 100% {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+}
+
+/* Scroll*/
+
+.scroll-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+	transition:.5s;
+	cursor: pointer;
+	z-index: 1;
+	span {
+		width: 50px;
+		height: 50px;
+		display: table;
+		background: rgba(0,0,0,.5);
+		color: white;
+		text-align: center;
+		border-radius: 4px;
+	}
+	i {
+		height: 20px;
+		display: table-cell;
+		vertical-align: middle;
+	}
+  }
+
+
+
+.btn-prev{
+	background: #dadada;
+	padding: 12px 20px;
+	color: #222!important;
+	font-weight: 800;
+	margin: 0 10px;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+.btn-prev:hover, .btn-prev:focus {
+	background: #222;
+	color: #fff!important;
+	font-weight: 800;
+}
+
+.btn-next{
+	background: #dadada;
+	padding: 12px 20px;
+	color: #0a0a0a!important;
+	font-weight: 800;
+	margin: 0 10px;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+.btn-next:hover, .btn-prev:focus {
+	background: #544e66;
+	color: #fff!important;
+	font-weight: 800;
+}
+
+
+

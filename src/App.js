@@ -10,8 +10,11 @@ import PrivateRoutesLayout from './layouts/PrivateRoutesLayout';
 import PlacesToGo from "./pages/PlacesToGo"
 import Detail from "./pages/Detail"
 import PlanYourTrip from "./pages/PlanYourTrip"
-import Footer from './pages/Footer';
+import Footer from './components/Footer';
 import Navbar from './Navbar';
+import ScrollToTop from "./components/ScrollToTop";
+
+
 
 
  
@@ -19,6 +22,7 @@ function App() {
   return (
     <div className='App'>
       <Navbar/>
+      <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/authentication" element={<Authentication />} />
@@ -26,6 +30,7 @@ function App() {
       <Route path="/places-to-go" element={<PlacesToGo/>} />
       <Route path="/detail/:id" element={<Detail/>} />
       <Route path="/plan-your-trip" element={<PlanYourTrip/>} />
+     
 
       {/*private pages*/}
       <Route element={<PrivateRoutesLayout/>}>
