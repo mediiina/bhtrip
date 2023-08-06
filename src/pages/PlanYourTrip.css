@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+}
+  
+.left-side {
+    flex: 1; /* Lijevi dio će zauzeti 50% širine */
+    
+}
+  
+.right-side {
+    flex: 1; /* Desni dio će zauzeti 50% širine */
+}
+
+.right-side h1 {
+    color: rgb(8, 9, 9);
+    font-weight: bold;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    margin-left: 150px;
+    font-family:'Lora', serif;  
+}
+
+.right-side h2 {
+    color: rgb(8, 9, 9);
+    font-weight: bold;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-left: 80px;
+    font-family:'Lora', serif;  
+}
+
+.right-side text {
+    text-align: justify;
+}
+
+.left-side img{
+    align-items: center;
+    padding-top: 210px;
+    padding-bottom: 20px;
+    margin-left: -70px;
+    display: inline-block; 
+    
+}
+
+.left-side .rotate-img {
+    transform: rotate(-12deg); /* Postavite željeni kut rotacije (ovdje je -60 stupnjeva) */
+  }
+
+
+
