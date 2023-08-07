@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import userLogOut from '../auth/userLogOut'
 import { useNavigate } from 'react-router-dom'
 import "./Dashboard.css"
-import ReactTagInput from '@pathofdev/react-tag-input';
 import "@pathofdev/react-tag-input/build/index.css";
 import { db, storage } from '../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { addDoc, collection } from "firebase/firestore";
+
 
 
 const Dashboard = () => {
@@ -28,6 +28,7 @@ const Dashboard = () => {
     trending:"no",
     category:"",
     description:"",
+    price:"",
   }
 
   const categoryOption = [
@@ -48,7 +49,7 @@ const Dashboard = () => {
   const [progress, setProgress] = useState(null);
 
 
-  const{title, category, trending, description} = form;
+  const{title, category, trending, description, price} = form;
 
   useEffect(() => {
     const uploadFile =() => {
@@ -74,6 +75,7 @@ const Dashboard = () => {
     }, 
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
+        
         setForm((prev) => ({ ...prev, imgUrl: downloadUrl}));
       });
     }
@@ -94,7 +96,7 @@ const Dashboard = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (category && title && file && description && trending) {
+    if (category && title && file && description && trending && price) {
       try{
         await addDoc(collection(db, "attractions"), form );
         console.log("Document successfully added to 'attractions' collection.");
@@ -111,12 +113,12 @@ const Dashboard = () => {
       <div>
         <button onClick={handleLogOut}>Log Out</button> 
       </div>
-      <div className="container">
+      <div className="input">
         <div className="col-12">
           <div className="text-center heading py-2">
             Create Post </div>
           </div>
-          <div className="row h-100 justify-content-center align-items-center">
+          <div className="container">
             <div className="col-10 col-md-8 col-lg-6">
               <form className="row post-form" onSubmit={handleSubmit}>
                 <div className="col-12 py-3">
@@ -174,6 +176,14 @@ const Dashboard = () => {
                   placeholder="Description"
                   value={description}
                   name="description"
+                  onChange={handleChange}/>
+                </div>
+                <div className="col-12 py-3">
+                  <textarea 
+                  className="form-control price-box"
+                  placeholder="Price"
+                  value={price}
+                  name="price"
                   onChange={handleChange}/>
                 </div>
                 <div className="mb-3">

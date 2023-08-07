@@ -1,8 +1,8 @@
-import React from 'react'
-import OwlCarousel from "react-owl-carousel"
+import React from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import {Link} from "react-router-dom"
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+
 
 const Trending = ({ attractions }) => {
   const options = {
@@ -29,8 +29,7 @@ const Trending = ({ attractions }) => {
       <div>
         <div className="post-heading text-start py-2 mb-4">Trending</div>
       </div>
-      <OwlCarousel className="owl-theme" {...options}>
-        {attractions?.map((item) => (
+      <AliceCarousel mouseTracking {...options} items={attractions?.map((item) => (
           <div className="item px-2" key={item.id}>
             <Link to={`/detail/${item.id}`}>
               <div className="trending-img-position">
@@ -49,7 +48,7 @@ const Trending = ({ attractions }) => {
             </Link>
           </div>
         ))}
-      </OwlCarousel>
+      />
     </>
   );
 };
