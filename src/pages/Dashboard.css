@@ -7,8 +7,8 @@
 	text-align: center;
 	margin-right: 140px;
 } 
-
-.container {
+ 
+.input {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

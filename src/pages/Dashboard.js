@@ -113,12 +113,12 @@ const Dashboard = () => {
       <div>
         <button onClick={handleLogOut}>Log Out</button> 
       </div>
-      <div className="input">
+      <div>
         <div className="col-12">
           <div className="text-center heading py-2">
             Create Post </div>
           </div>
-          <div className="container">
+          <div className="input">
             <div className="col-10 col-md-8 col-lg-6">
               <form className="row post-form" onSubmit={handleSubmit}>
                 <div className="col-12 py-3">
