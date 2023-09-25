@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Header.css"
-import cover from "../images/Travel1.png"
-import { Link } from 'react-router-dom'
+import cover from "../images/Travel2.png"
 
 
 
@@ -14,7 +13,6 @@ export default function Header() {
           </div>
           <img className="headerImg" src={cover} alt="Travel"></img>
            
-          <Link to="/dashboard"> <button className='header-btn'>Travel Plan</button> </Link>
          
       </div>
     )

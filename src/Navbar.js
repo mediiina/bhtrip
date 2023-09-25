@@ -25,7 +25,7 @@ export default function Navbar() {
             </div>
             <div className="topRight">
                 <li className="topListItem" >
-                    <a href="/authentication">Login/Sign In</a>
+                    <a href="/authentication">Login/Sign Up</a>
                 </li>
             </div>
         </nav>
